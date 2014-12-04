@@ -17,10 +17,6 @@ function fetch_feed() {
         dataType: "html",
         success: function(data){
 
-            if($(data).find('.feed-single').length > 0 || $(data).find('.comment-notification').length > 0) {
-                chrome.browserAction.setBadgeText({ text: "New" });
-            }
-
             if($(data).find('.feed-single').length > 0) {
                 $(data).find('.feed-single').each(function() {
                     returnedTitle = $(this).find('.title').text();
@@ -53,6 +49,7 @@ function notifyMe(title, excerpt, url) {
        iconUrl: "logo-white-bg.jpg"
     };
     chrome.notifications.create(url, opt, function(id) {
+        chrome.browserAction.setBadgeText({ text: "New" });
     });
 
 }
