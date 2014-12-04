@@ -1,5 +1,6 @@
 {
     "name":"Stickyeyes Intranet Notifications",
+    "update_url": "http://myhost.com/mytestextension/updates.xml",
     "manifest_version":2,
     "version":"1.0",
     "background":{
