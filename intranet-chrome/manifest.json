@@ -1,0 +1,25 @@
+{
+    "name":"Stickyeyes Intranet Notifications",
+    "manifest_version":2,
+    "version":"1.0",
+    "background":{
+        "scripts":["jquery.js", "notification.js"]
+    },
+    "browser_action":{
+        "default_icon":"logo.png"
+    },
+    "permissions":[
+        "notifications",
+        "background",
+        "tabs",
+        "http://intranet.stickyeyes.com/",
+        "webRequest", "webRequestBlocking"
+    ],
+    "web_accessible_resources":[
+        "logo.png"
+    ],
+    "content_scripts": [ {
+        "js": [ "jquery.js" ],
+        "matches": [ "http://*/*", "https://*/*"]
+    }]
+}
